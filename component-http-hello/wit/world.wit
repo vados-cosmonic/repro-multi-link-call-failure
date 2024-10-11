@@ -3,5 +3,6 @@ package wasmcloud:repro;
 world component {
   import wasmcloud:example/system-info;
 
+  export wasmcloud:example/process-data;
   export wasi:http/incoming-handler@0.2.0;
 }
