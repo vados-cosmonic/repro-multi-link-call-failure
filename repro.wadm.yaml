@@ -21,12 +21,12 @@ spec:
           properties:
             instances: 1
         # Link the component to the provider on wasmcloud:example/system-info
-        - type: link
-          properties:
-            target: custom-template
-            namespace: wasmcloud
-            package: example
-            interfaces: [system-info]
+        # - type: link
+        #   properties:
+        #     target: custom-template
+        #     namespace: wasmcloud
+        #     package: example
+        #     interfaces: [system-info]
 
     # ###################
     # # Custom Provider #
