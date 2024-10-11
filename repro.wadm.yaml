@@ -28,27 +28,27 @@ spec:
             package: example
             interfaces: [system-info]
 
-    ###################
-    # Custom Provider #
-    ###################
+    # ###################
+    # # Custom Provider #
+    # ###################
 
-    - name: custom-template
-      type: capability
-      properties:
-        image: file://./provider-custom/build/wasmcloud-provider-custom-template.par.gz
-        id: custom-template
-        config:
-          - name: provider-config
-            properties:
-              foo: bar
-      traits:
-        # Link the provider to the component on wasmcloud:example/process-data
-        - type: link
-          properties:
-            target: test-component
-            namespace: wasmcloud
-            package: example
-            interfaces: [process-data]
+    # - name: custom-template
+    #   type: capability
+    #   properties:
+    #     image: file://./provider-custom/build/wasmcloud-provider-custom-template.par.gz
+    #     id: custom-template
+    #     config:
+    #       - name: provider-config
+    #         properties:
+    #           foo: bar
+    #   traits:
+    #     # Link the provider to the component on wasmcloud:example/process-data
+    #     - type: link
+    #       properties:
+    #         target: test-component
+    #         namespace: wasmcloud
+    #         package: example
+    #         interfaces: [process-data]
 
     ########################
     # HTTP server provider #
