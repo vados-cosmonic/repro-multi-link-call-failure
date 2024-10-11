@@ -2,6 +2,9 @@
 
 This repository is a reproduction of [Issue #3285 in wasmcloud/wasmcloud][issue].
 
+A "temporary" fix (i.e. removing one of the links) is on the `temp-fix` branch of this repository,
+which shows that the HTTP calls *will* work properly when that the second link is removed.
+
 ## Reproduction steps
 
 ### Start the environment
