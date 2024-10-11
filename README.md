@@ -18,7 +18,7 @@ just setup
 ### Attempt to curl the HTTP server provider
 
 ```console
-curl localhost:8080
+curl localhost:8082
 ```
 
 ### Teardown the environment
