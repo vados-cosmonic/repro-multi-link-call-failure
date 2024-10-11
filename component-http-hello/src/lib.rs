@@ -5,6 +5,7 @@ mod bindings {
 }
 
 use bindings::exports::wasi::http::incoming_handler::Guest;
+use bindings::exports::wasmcloud::example::process_data;
 use bindings::wasi::http::types::*;
 use bindings::wasmcloud::example::system_info;
 
@@ -25,5 +26,11 @@ impl Guest for Component {
             .blocking_write_and_flush(format!("{call_result:#?}").as_bytes())
             .unwrap();
         OutgoingBody::finish(response_body, None).expect("failed to finish response body");
+    }
+}
+
+impl process_data::Guest for Component {
+    fn process(data: process_data::Data) -> String {
+        format!("processed!")
     }
 }
