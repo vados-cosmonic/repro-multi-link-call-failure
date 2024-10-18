@@ -14,6 +14,8 @@ struct Component;
 impl Guest for Component {
     fn handle(_request: IncomingRequest, response_out: ResponseOutparam) {
         let call_result = system_info::call();
+        let arch = system_info::request_info(system_info::Kind::Arch);
+        let os = system_info::request_info(system_info::Kind::Arch);
 
         // Build response body
         let response = OutgoingResponse::new(Fields::new());
@@ -23,7 +25,7 @@ impl Guest for Component {
         response_body
             .write()
             .unwrap()
-            .blocking_write_and_flush(format!("{call_result:#?}").as_bytes())
+            .blocking_write_and_flush(format!("{call_result:#?}\nArch: {arch}, OS: {os}").as_bytes())
             .unwrap();
         OutgoingBody::finish(response_body, None).expect("failed to finish response body");
     }
